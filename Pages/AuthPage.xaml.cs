@@ -13,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Devyatochka
+namespace Devyatochka.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AuthPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AuthPage : Page
     {
-        public MainWindow()
+        public AuthPage()
         {
             InitializeComponent();
-
-            frameContent.Navigate(new Pages.AuthPage());
-        }
-
-        private void frameContent_ContentRendered(object sender, EventArgs e)
-        {
-            if (frameContent.CanGoBack) btnBack.Visibility = Visibility.Visible;
-            else btnBack.Visibility = Visibility.Hidden;
         }
     }
 }
