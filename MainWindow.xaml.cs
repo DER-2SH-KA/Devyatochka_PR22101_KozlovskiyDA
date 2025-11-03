@@ -24,7 +24,7 @@ namespace Devyatochka
         {
             InitializeComponent();
 
-            frameContent.Navigate(new Pages.AuthPage());
+            frameContent.Navigate(new Pages.ChooseMenuType());
         }
 
         private void frameContent_ContentRendered(object sender, EventArgs e)

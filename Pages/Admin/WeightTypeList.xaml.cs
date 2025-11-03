@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Devyatochka.Pages
+namespace Devyatochka.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для AuthPage.xaml
+    /// Логика взаимодействия для WeightTypeList.xaml
     /// </summary>
-    public partial class AuthPage : Page
+    public partial class WeightTypeList : Page
     {
-        public AuthPage()
+        public WeightTypeList()
         {
             InitializeComponent();
         }

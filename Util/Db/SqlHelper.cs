@@ -1,6 +1,8 @@
 ﻿using Devyatochka.Database;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,18 +11,45 @@ namespace Devyatochka.Util.Db
 {
     public class SqlHelper
     {
-        private static DevyatochkaEntities instance;
+        private static DevyatochkaEntities instance = new DevyatochkaEntities();
 
         // Get all.
-        public static List<User> GetUsers() { return instance.User.ToList(); }
-        public static List<Role> GetRoles() { return instance.Role.ToList(); }
-        public static List<Country> GetCountries() { return instance.Country.ToList(); }
-        public static List<ProductCategory> GetProductCategories() { return instance.ProductCategory.ToList(); }
-        public static List<Brand> GetBrands() { return instance.Brand.ToList(); }
-        public static List<WeightType> GetWeightTypes() { return instance.WeightType.ToList(); }
-        public static List<Product> GetProducts() { return instance.Product.ToList(); }
-        public static List<DiscountType> GetDiscountTypes() { return instance.DiscountType.ToList(); }
-        public static List<ProductCost> GetProductCosts() { return instance.ProductCost.ToList(); }
+        public static ObservableCollection<User> GetUsers() {
+            instance.User.Load();
+            return instance.User.Local; 
+        }
+        public static ObservableCollection<Role> GetRoles() {
+            instance.Role.Load();
+            return instance.Role.Local; 
+        }
+        public static ObservableCollection<Country> GetCountries() {
+            instance.Country.Load();
+            return instance.Country.Local; 
+        }
+        public static ObservableCollection<ProductCategory> GetProductCategories() {
+            instance.ProductCategory.Load();
+            return instance.ProductCategory.Local; 
+        }
+        public static ObservableCollection<Brand> GetBrands() {
+            instance.Brand.Load();
+            return instance.Brand.Local; 
+        }
+        public static ObservableCollection<WeightType> GetWeightTypes() {
+            instance.WeightType.Load();
+            return instance.WeightType.Local; 
+        }
+        public static ObservableCollection<Product> GetProducts() {
+            instance.Product.Load();
+            return instance.Product.Local; 
+        }
+        public static ObservableCollection<DiscountType> GetDiscountTypes() {
+            instance.DiscountType.Load();
+            return instance.DiscountType.Local; 
+        }
+        public static ObservableCollection<ProductCost> GetProductCosts() {
+            instance.ProductCost.Load();
+            return instance.ProductCost.Local; 
+        }
 
         // Get by ID.
         public static User GetUserById(long id) { return instance.User.Find(id); }

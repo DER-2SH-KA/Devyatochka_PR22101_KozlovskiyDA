@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Devyatochka.Pages
+namespace Devyatochka.Pages.SubComponents
 {
     /// <summary>
-    /// Логика взаимодействия для AuthPage.xaml
+    /// Логика взаимодействия для UserCard.xaml
     /// </summary>
-    public partial class AuthPage : Page
+    public partial class UserCard : UserControl
     {
-        public AuthPage()
+        public UserCard()
         {
             InitializeComponent();
         }

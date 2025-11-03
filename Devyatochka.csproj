@@ -62,6 +62,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\Admin\BrandList.xaml.cs">
+      <DependentUpon>BrandList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\CountryList.xaml.cs">
+      <DependentUpon>CountryList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\DiscountTypeList.xaml.cs">
+      <DependentUpon>DiscountTypeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ProductCategoryList.xaml.cs">
+      <DependentUpon>ProductCategoryList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ProductCostList.xaml.cs">
+      <DependentUpon>ProductCostList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ProductList.xaml.cs">
+      <DependentUpon>ProductList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\RoleList.xaml.cs">
+      <DependentUpon>RoleList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\UserList.xaml.cs">
+      <DependentUpon>UserList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\WeightTypeList.xaml.cs">
+      <DependentUpon>WeightTypeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChooseMenuType.xaml.cs">
+      <DependentUpon>ChooseMenuType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SubComponents\UserCard.xaml.cs">
+      <DependentUpon>UserCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util\Db\SqlHelper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -130,7 +163,51 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Admin\BrandList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\CountryList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\DiscountTypeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\ProductCategoryList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\ProductCostList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\ProductList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\RoleList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\UserList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\WeightTypeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChooseMenuType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SubComponents\UserCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

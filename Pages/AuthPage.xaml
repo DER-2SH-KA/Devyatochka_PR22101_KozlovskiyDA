@@ -8,20 +8,5 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AuthPage">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <Button x:Name="btnIAmAdmin" Grid.Column="1" Grid.Row="1" Content="Я администратор" Background="LightGray" Click="btnIAmAdmin_Click" />
-        <Button x:Name="btnIAmClient" Grid.Column="1" Grid.Row="2" Content="Я покупатель" />
-    </Grid>
+    <Label>Меню авторизации или регистрации</Label>
 </Page>

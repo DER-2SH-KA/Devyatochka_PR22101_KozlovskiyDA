@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace Devyatochka.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AuthPage.xaml
+    /// Логика взаимодействия для ChooseMenuType.xaml
     /// </summary>
-    public partial class AuthPage : Page
+    public partial class ChooseMenuType : Page
     {
-        public AuthPage()
+        public ChooseMenuType()
         {
             InitializeComponent();
+        }
+
+        private void btnIAmAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.AdminGeneralMenuPage());
         }
     }
 }

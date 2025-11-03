@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Devyatochka.Pages
+namespace Devyatochka.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для AuthPage.xaml
+    /// Логика взаимодействия для CountryList.xaml
     /// </summary>
-    public partial class AuthPage : Page
+    public partial class CountryList : Page
     {
-        public AuthPage()
+        public CountryList()
         {
             InitializeComponent();
         }
