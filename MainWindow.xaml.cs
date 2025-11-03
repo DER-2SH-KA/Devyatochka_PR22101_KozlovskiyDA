@@ -32,5 +32,10 @@ namespace Devyatochka
             if (frameContent.CanGoBack) btnBack.Visibility = Visibility.Visible;
             else btnBack.Visibility = Visibility.Hidden;
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (frameContent.CanGoBack) frameContent.GoBack();
+        }
     }
 }

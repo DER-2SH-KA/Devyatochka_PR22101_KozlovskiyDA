@@ -24,5 +24,10 @@ namespace Devyatochka.Pages
         {
             InitializeComponent();
         }
+
+        private void btnIAmAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.AdminGeneralMenuPage());
+        }
     }
 }

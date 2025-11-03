@@ -21,7 +21,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="btnIAmAdmin" Grid.Column="1" Grid.Row="1" Content="Я администратор" Background="LightGray" />
+        <Button x:Name="btnIAmAdmin" Grid.Column="1" Grid.Row="1" Content="Я администратор" Background="LightGray" Click="btnIAmAdmin_Click" />
         <Button x:Name="btnIAmClient" Grid.Column="1" Grid.Row="2" Content="Я покупатель" />
     </Grid>
 </Page>

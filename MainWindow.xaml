@@ -14,7 +14,7 @@
 
         <Grid Grid.Column="0" Grid.Row="0" Background="#5419a7">
             <Image Source="/Resources/img/Devyatochka_icon.png" Width="60" Height="60" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" />
-            <Button x:Name="btnBack" Content="Назад" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 10 0"/>
+            <Button x:Name="btnBack" Content="Назад" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 10 0" Click="btnBack_Click"/>
         </Grid>
 
         <Frame x:Name="frameContent" Grid.Column="0" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="frameContent_ContentRendered" />
