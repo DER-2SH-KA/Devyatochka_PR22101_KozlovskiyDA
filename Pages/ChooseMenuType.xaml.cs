@@ -27,7 +27,7 @@ namespace Devyatochka.Pages
 
         private void btnIAmAdmin_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pages.AdminGeneralMenuPage());
+            this.NavigationService.Navigate(new Pages.AuthPage());
         }
     }
 }

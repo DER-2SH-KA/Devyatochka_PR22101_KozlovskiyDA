@@ -30,8 +30,8 @@
             <TextBlock Text="Пароль:" Margin="0 0 0 5"/>
             <PasswordBox x:Name="passwordBoxPassword" Margin="0 0 0 20"/>
 
-            <Button x:Name="buttonSignIn" Content="Войти" Margin="0 5"/>
-            <Button x:Name="buttonSignUp" Content="Регистрация" Margin="0 5"/>
+            <Button x:Name="buttonSignIn" Content="Войти" Margin="0 5" Click="buttonSignIn_Click"/>
+            <Button x:Name="buttonSignUp" Content="Регистрация" Margin="0 5" Click="buttonSignUp_Click"/>
 
         </StackPanel>
     </Grid>
