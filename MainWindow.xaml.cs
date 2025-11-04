@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Devyatochka.Util.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace Devyatochka
     {
         public MainWindow()
         {
+            SqlHelper.LoadAllEntities();
+
             InitializeComponent();
 
             frameContent.Navigate(new Pages.ChooseMenuType());

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Devyatochka.Database;
+using Devyatochka.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +22,37 @@ namespace Devyatochka.Pages
     /// </summary>
     public partial class AuthPage : Page
     {
+        private UserService userService;
         public AuthPage()
         {
             InitializeComponent();
+
+            userService = UserService.GetInstance();
+
+            ClearFields();
         }
 
         private void buttonSignIn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Заглушка");
+            User user = userService.GetUserByLoginAndPass(textBoxLogin.Text, passwordBoxPassword.Password);
+
+            if (user != null) { 
+                ClearFields();
+
+                this.NavigationService.Navigate(new Pages.AdminGeneralMenuPage());
+            }
+            else MessageBox.Show("Такого пользователя не существует или неверные логин или пароль");
         }
 
         private void buttonSignUp_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Pages.SignUpPage());
+        }
+
+        private void ClearFields()
+        {
+            textBoxLogin.Clear();
+            passwordBoxPassword.Clear();
         }
     }
 }

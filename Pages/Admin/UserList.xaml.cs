@@ -1,4 +1,5 @@
 ﻿using Devyatochka.Database;
+using Devyatochka.Services;
 using Devyatochka.Util.Db;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,9 @@ namespace Devyatochka.Pages.Admin
     /// </summary>
     public partial class UserList : Page
     {
+        private UserService userService;
+        private RoleService roleService;
+
         private ObservableCollection<User> users;
         private ObservableCollection<Role> roles;
 
@@ -31,6 +35,9 @@ namespace Devyatochka.Pages.Admin
         public UserList()
         {
             InitializeComponent();
+
+            userService = UserService.GetInstance();
+            roleService = RoleService.GetInstance();
 
             LoadEntities();
             LoadComboBoxRoles();
@@ -79,8 +86,8 @@ namespace Devyatochka.Pages.Admin
 
         private void LoadEntities()
         {
-            users = SqlHelper.GetUsers();
-            roles = SqlHelper.GetRoles();
+            users = userService.GetUsers();
+            roles = roleService.GetRoles();
         }
 
         private void LoadComboBoxRoles()

@@ -149,6 +149,8 @@
     <Compile Include="Pages\SubComponents\UserCard.xaml.cs">
       <DependentUpon>UserCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\RoleService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Util\Db\SqlHelper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

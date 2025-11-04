@@ -31,7 +31,7 @@
             <PasswordBox x:Name="passwordBoxPassword" Margin="0 0 0 10"/>
             
             <TextBlock Text="Роль:" Margin="0 0 0 5"/>
-            <ComboBox x:Name="comboBoxRole" Margin="0 0 0 20"/>
+            <ComboBox x:Name="comboBoxRole" Margin="0 0 0 20" DisplayMemberPath="Title" />
 
             <Button x:Name="buttonRegister" Content="Регистрация" Margin="0 5" Click="buttonRegister_Click"/>
 

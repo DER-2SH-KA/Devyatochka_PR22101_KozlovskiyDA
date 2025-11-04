@@ -13,43 +13,30 @@ namespace Devyatochka.Util.Db
     {
         private static DevyatochkaEntities instance = new DevyatochkaEntities();
 
-        // Get all.
-        public static ObservableCollection<User> GetUsers() {
+        public static void LoadAllEntities()
+        {
             instance.User.Load();
-            return instance.User.Local; 
-        }
-        public static ObservableCollection<Role> GetRoles() {
             instance.Role.Load();
-            return instance.Role.Local; 
-        }
-        public static ObservableCollection<Country> GetCountries() {
             instance.Country.Load();
-            return instance.Country.Local; 
-        }
-        public static ObservableCollection<ProductCategory> GetProductCategories() {
             instance.ProductCategory.Load();
-            return instance.ProductCategory.Local; 
-        }
-        public static ObservableCollection<Brand> GetBrands() {
             instance.Brand.Load();
-            return instance.Brand.Local; 
-        }
-        public static ObservableCollection<WeightType> GetWeightTypes() {
             instance.WeightType.Load();
-            return instance.WeightType.Local; 
-        }
-        public static ObservableCollection<Product> GetProducts() {
             instance.Product.Load();
-            return instance.Product.Local; 
-        }
-        public static ObservableCollection<DiscountType> GetDiscountTypes() {
             instance.DiscountType.Load();
-            return instance.DiscountType.Local; 
-        }
-        public static ObservableCollection<ProductCost> GetProductCosts() {
             instance.ProductCost.Load();
-            return instance.ProductCost.Local; 
+
         }
+
+        // Get all.
+        public static ObservableCollection<User> GetUsers() { return instance.User.Local; }
+        public static ObservableCollection<Role> GetRoles() { return instance.Role.Local; }
+        public static ObservableCollection<Country> GetCountries() { return instance.Country.Local; }
+        public static ObservableCollection<ProductCategory> GetProductCategories() { return instance.ProductCategory.Local; }
+        public static ObservableCollection<Brand> GetBrands() { return instance.Brand.Local; }
+        public static ObservableCollection<WeightType> GetWeightTypes() { return instance.WeightType.Local; }
+        public static ObservableCollection<Product> GetProducts() { return instance.Product.Local; }
+        public static ObservableCollection<DiscountType> GetDiscountTypes() { return instance.DiscountType.Local; }
+        public static ObservableCollection<ProductCost> GetProductCosts() { return instance.ProductCost.Local; }
 
         // Get by ID.
         public static User GetUserById(long id) { return instance.User.Find(id); }
@@ -286,7 +273,14 @@ namespace Devyatochka.Util.Db
         {
             return instance.User
                 .Where(x => x.Login.Equals(login) && x.Password.Equals(password))
-                .FirstOrDefault();
+                .First();
+        }
+
+        public static User ExistsUserWithLogin(string login)
+        {
+            return instance.User
+                .Where(x => x.Login.Equals(login))
+                .First();
         }
     }
 }
