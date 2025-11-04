@@ -23,6 +23,7 @@ namespace Devyatochka.Pages
     /// </summary>
     public partial class SignUpPage : Page
     {
+        private UserService userService;
         private RoleService roleService;
 
         private ObservableCollection<Role> roles;
@@ -31,15 +32,33 @@ namespace Devyatochka.Pages
         {
             InitializeComponent();
 
+            userService = UserService.GetInstance();
             roleService = RoleService.GetInstance();
 
             LoadEntities();
             LoadComboBoxRoles();
+
+            ClearFields();
         }
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pages.AdminGeneralMenuPage());
+            User createdUser = userService.CreateUser(
+                textBoxLogin.Text,
+                passwordBoxPassword.Password,
+                (Role) comboBoxRole.SelectedItem
+            );
+
+            if (createdUser != null)
+            {
+                MessageBox.Show("Пользователь успешно создан!");
+                ClearFields();
+                this.NavigationService.Navigate(new Pages.AdminGeneralMenuPage());
+            }
+            else
+            {
+                MessageBox.Show("Пользователь не был создан!");
+            }
         }
 
         private void LoadEntities()
@@ -57,6 +76,13 @@ namespace Devyatochka.Pages
                 }
             }
 
+            comboBoxRole.SelectedIndex = 0;
+        }
+
+        private void ClearFields()
+        {
+            textBoxLogin.Clear();
+            passwordBoxPassword.Clear();
             comboBoxRole.SelectedIndex = 0;
         }
     }

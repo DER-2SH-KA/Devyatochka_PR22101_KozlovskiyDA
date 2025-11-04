@@ -86,5 +86,29 @@ namespace Devyatochka.Services
 
             return null;
         }
+
+        public User CreateUser(string loginRaw, string passwordRaw, Role role)
+        {
+            try
+            {
+                if (loginRaw == null || passwordRaw == null || role == null) { return null; }
+
+                string login = loginRaw.Trim();
+                string password = passwordRaw.Trim();
+
+                if (login.Equals("") || password.Equals("")) { return null; }
+
+                User userToCreate = new User();
+
+                userToCreate.Login = login;
+                userToCreate.Password = password;
+                userToCreate.Role = role;
+
+                return SqlHelper.CreateUser(userToCreate);
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+
+            return null;
+        }
     }
 }
