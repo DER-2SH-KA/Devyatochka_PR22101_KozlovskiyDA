@@ -26,7 +26,7 @@ namespace Devyatochka.Services
 
         private RoleService() { }
 
-        public ObservableCollection<Role> GetRoles()
+        public ObservableCollection<Role> GetAll()
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Devyatochka.Services
             return new ObservableCollection<Role>();
         }
 
-        public Role GetRoleById(long id)
+        public Role GetById(long id)
         {
             try
             {

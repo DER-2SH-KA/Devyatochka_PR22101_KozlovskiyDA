@@ -43,7 +43,7 @@ namespace Devyatochka.Pages
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
-            User createdUser = userService.CreateUser(
+            User createdUser = userService.Create(
                 textBoxLogin.Text,
                 passwordBoxPassword.Password,
                 (Role) comboBoxRole.SelectedItem
@@ -63,7 +63,7 @@ namespace Devyatochka.Pages
 
         private void LoadEntities()
         {
-            roles = roleService.GetRoles();
+            roles = roleService.GetAll();
         }
 
         private void LoadComboBoxRoles()

@@ -21,7 +21,7 @@
             <Label Content="Роль:" VerticalAlignment="Center" Margin="10 0 0 0"/>
             <ComboBox x:Name="comboBoxRole" Width="150" VerticalAlignment="Center" DisplayMemberPath="Title" Margin="5"/>
 
-            <Button x:Name="buttonRefresh" Content="Обновить" VerticalAlignment="Center" Margin="10 5 5 5" />
+            <Button x:Name="buttonRefresh" Content="Обновить" VerticalAlignment="Center" Margin="10 5 5 5" Click="buttonRefresh_Click" />
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">

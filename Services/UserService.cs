@@ -26,7 +26,7 @@ namespace Devyatochka.Services
 
         private UserService() { }
 
-        public ObservableCollection<User> GetUsers()
+        public ObservableCollection<User> GetAll()
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Devyatochka.Services
             return new ObservableCollection<User>();
         }
 
-        public User GetUserById(long id)
+        public User GetById(long id)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace Devyatochka.Services
             return null;
         }
 
-        public User CreateUser(string loginRaw, string passwordRaw, Role role)
+        public User Create(string loginRaw, string passwordRaw, Role role)
         {
             try
             {
@@ -109,6 +109,42 @@ namespace Devyatochka.Services
             catch(Exception ex) { MessageBox.Show(ex.Message); }
 
             return null;
+        }
+
+        public User Update(User entity)
+        {
+            try
+            {
+                if (entity == null) {
+                    MessageBox.Show("Сущность для обновления равна нулю");
+                    return null;
+                }
+
+                return SqlHelper.UpdateUser(entity);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return null;
+        }
+
+        public void Delete(User entity)
+        {
+            try
+            {
+                if (entity == null)
+                {
+                    MessageBox.Show("Сущность для удаления равна нулю");
+                }
+
+                SqlHelper.DeleteUser(entity);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

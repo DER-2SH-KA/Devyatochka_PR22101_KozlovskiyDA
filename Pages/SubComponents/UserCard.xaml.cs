@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Devyatochka.Database;
+using Devyatochka.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,27 @@ namespace Devyatochka.Pages.SubComponents
     /// </summary>
     public partial class UserCard : UserControl
     {
-        public UserCard()
+        private UserService userService;
+
+        private User userForCard;
+
+        public UserCard(User userForCard)
         {
+            this.userForCard = userForCard;
+
+            this.DataContext = userForCard;
+
             InitializeComponent();
+        }
+
+        private void buttonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new Pages.Admin.CreateUpdatePages.CreateUpdateUserPage(userForCard));
+        }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            userService.Delete(userForCard);
         }
     }
 }

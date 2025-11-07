@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,6 +42,8 @@ namespace Devyatochka.Pages.Admin
 
             LoadEntities();
             LoadComboBoxRoles();
+
+            RefreshWrapPanelContent();
         }
 
         private void RefreshWrapPanelContent()
@@ -82,12 +85,17 @@ namespace Devyatochka.Pages.Admin
 
                 );
             }
+
+            foreach (User user in usersFiltered)
+            {
+                wrapPanelContainer.Children.Add(new Pages.SubComponents.UserCard(user));
+            }
         }
 
         private void LoadEntities()
         {
-            users = userService.GetUsers();
-            roles = roleService.GetRoles();
+            users = userService.GetAll();
+            roles = roleService.GetAll();
         }
 
         private void LoadComboBoxRoles()
@@ -112,6 +120,15 @@ namespace Devyatochka.Pages.Admin
         private void comboBoxRole_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void buttonRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            LoadEntities();
+
+            wrapPanelContainer.Children.Clear();
+
+            RefreshWrapPanelContent();
         }
     }
 }
