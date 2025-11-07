@@ -130,5 +130,10 @@ namespace Devyatochka.Pages.Admin
 
             RefreshWrapPanelContent();
         }
+
+        private void buttonCreate_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.Admin.CreateUpdatePages.CreateUpdateUserPage());
+        }
     }
 }

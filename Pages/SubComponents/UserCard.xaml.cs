@@ -30,6 +30,8 @@ namespace Devyatochka.Pages.SubComponents
         {
             this.userForCard = userForCard;
 
+            userService = UserService.GetInstance();
+
             this.DataContext = userForCard;
 
             InitializeComponent();

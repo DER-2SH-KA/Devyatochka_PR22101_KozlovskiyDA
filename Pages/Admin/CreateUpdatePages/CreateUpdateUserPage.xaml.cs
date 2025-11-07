@@ -96,6 +96,10 @@ namespace Devyatochka.Pages.Admin.CreateUpdatePages
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
             if (this.userToEditing != null) {
+                userToEditing.Login = textBoxLogin.Text.Trim();
+                userToEditing.Password = textBoxPassword.Text.Trim();
+                userToEditing.Role = (Role) comboBoxRole.SelectedItem;
+
                 User savedUser = userService.Update(userToEditing);
 
                 if (savedUser != null) { MessageBox.Show("Сущность обновлена!"); }

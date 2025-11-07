@@ -140,6 +140,7 @@ namespace Devyatochka.Services
                 }
 
                 SqlHelper.DeleteUser(entity);
+                MessageBox.Show("Сущность удалена");
             }
             catch (Exception ex)
             {
