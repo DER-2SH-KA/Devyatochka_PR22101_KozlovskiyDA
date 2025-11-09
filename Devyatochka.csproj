@@ -119,17 +119,32 @@
     <Compile Include="Pages\Admin\CountryList.xaml.cs">
       <DependentUpon>CountryList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateBrandPage.xaml.cs">
+      <DependentUpon>CreateUpdateBrandPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateCountryPage.xaml.cs">
       <DependentUpon>CreateUpdateCountryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateDiscountTypePage.xaml.cs">
+      <DependentUpon>CreateUpdateDiscountTypePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateProductCategoryPage.xaml.cs">
       <DependentUpon>CreateUpdateProductCategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateProductCostPage.xaml.cs">
+      <DependentUpon>CreateUpdateProductCostPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateProductPage.xaml.cs">
+      <DependentUpon>CreateUpdateProductPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateRolePage.xaml.cs">
       <DependentUpon>CreateUpdateRolePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateUserPage.xaml.cs">
       <DependentUpon>CreateUpdateUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateWeightTypePage.xaml.cs">
+      <DependentUpon>CreateUpdateWeightTypePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\DiscountTypeList.xaml.cs">
       <DependentUpon>DiscountTypeList.xaml</DependentUpon>
@@ -204,11 +219,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateBrandPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateCountryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateDiscountTypePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateProductCategoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateProductCostPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateProductPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,6 +248,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateWeightTypePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
