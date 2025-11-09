@@ -22,9 +22,30 @@ namespace Devyatochka.Pages.SubComponents
     /// </summary>
     public partial class BrandCard : UserControl
     {
-        public BrandCard()
+        private BrandService service;
+        private Brand entityForCard;
+
+        public BrandCard(Brand entity)
         {
             InitializeComponent();
+
+            this.entityForCard = entity;
+            this.service = BrandService.GetInstance();
+            this.DataContext = entityForCard;
+        }
+
+        private void buttonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new Admin.CreateUpdatePages.CreateUpdateBrandPage(entityForCard));
+        }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите удалить \"{entityForCard.Title}\"?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                service.Delete(entityForCard);
+                MessageBox.Show("Сущность удалена. Обновите список.");
+            }
         }
     }
 }

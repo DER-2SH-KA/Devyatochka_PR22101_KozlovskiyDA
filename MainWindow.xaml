@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Devyatochka"
         mc:Ignorable="d"
-        Title="Супермаркет «Девяточка»" Height="450" Width="800" MinHeight="400" MinWidth="450" Icon="/Resources/img/Devyatochka_icon.png">
+        Title="Супермаркет «Девяточка»" Height="600" Width="800" MinHeight="400" MinWidth="450" Icon="/Resources/img/Devyatochka_icon.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />

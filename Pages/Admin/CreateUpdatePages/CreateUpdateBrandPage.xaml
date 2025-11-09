@@ -9,6 +9,52 @@
       Title="CreateUpdateBrandPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1" MinWidth="250">
+            <Label Content="Бренд" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,0,0,20"/>
+            
+            <TextBlock Text="Название:" Margin="0,0,0,5"/>
+            <TextBox x:Name="textBoxTitle" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Страна офиса:" Margin="0 0 0 5"/>
+            <ComboBox x:Name="comboBoxCountry" Margin="0 0 0 5" DisplayMemberPath="Title" />
+
+            <TextBlock Text="Адрес:" Margin="0,0,0,5"/>
+            <TextBox x:Name="textBoxAddress" Margin="0,0,0,5"/>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="0, 0, 5, 0">
+                    <TextBlock Text="Фамилия директора:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="textBoxFName" Margin="0,0,0,5"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Имя директора:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="textBoxLName" Margin="0,0,0,5"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical" Margin="5, 0, 0, 0">
+                    <TextBlock Text="Отчество директора:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="textBoxMName" Margin="0,0,0,5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock Text="Номер телефона директора:" Margin="0,0,0,5"/>
+            <TextBox x:Name="textBoxPhone" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Паспорт директора:" Margin="0,0,0,5"/>
+            <TextBox x:Name="textBoxPassport" Margin="0,0,0,5"/>
+
+            <Button x:Name="buttonSave" Content="Сохранить" Margin="0,5,0,20" Click="buttonSave_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

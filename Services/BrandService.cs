@@ -48,19 +48,55 @@ namespace Devyatochka.Services
             return null;
         }
 
-        public Brand Create(string titleRaw)
-        {
+        public Brand Create(
+            string titleRaw,
+            Country country,
+            string addressRaw,
+            string directorFirstNameRaw,
+            string directorLastNameRaw,
+            string directorMiddleNameRaw,
+            string directorPhoneRaw,
+            string directorPassportRaw
+            
+        ) {
             try
             {
-                if (titleRaw == null) { return null; }
+                if (
+                    string.IsNullOrEmpty(titleRaw) || 
+                    country == null ||
+                    string.IsNullOrEmpty(addressRaw) ||
+                    string.IsNullOrEmpty(directorFirstNameRaw) ||
+                    string.IsNullOrEmpty(directorLastNameRaw) ||
+                    string.IsNullOrEmpty(directorPhoneRaw) ||
+                    string.IsNullOrEmpty(directorPassportRaw)
+                ) { return null; }
 
                 string title = titleRaw.Trim();
+                string address = addressRaw.Trim();
+                string directorFirstName = directorFirstNameRaw.Trim();
+                string directorLastName = directorLastNameRaw.Trim();
+                string directorMiddleName = directorMiddleNameRaw != null ? directorMiddleNameRaw.Trim() : null;
+                long directorPhone = Int64.Parse(directorPhoneRaw);
+                long directorPassport = Int64.Parse(directorPassportRaw);
 
-                if (title.Equals("")) { return null; }
+                if (
+                    string.IsNullOrEmpty(title) ||
+                    country == null ||
+                    string.IsNullOrEmpty(address) ||
+                    string.IsNullOrEmpty(directorFirstName) ||
+                    string.IsNullOrEmpty(directorLastName)
+                ) { return null; }
 
                 Brand entityToCreate = new Brand();
 
                 entityToCreate.Title = title;
+                entityToCreate.CountryId = country.Id;
+                entityToCreate.Address = address;
+                entityToCreate.DirectorFirstName = directorFirstName;
+                entityToCreate.DirectorLastName = directorLastName;
+                entityToCreate.DirectorMiddleName = directorMiddleName;
+                entityToCreate.DirectorPhone = directorPhone;
+                entityToCreate.DirectorPassport = directorPassport;
 
                 return SqlHelper.CreateBrand(entityToCreate);
             }

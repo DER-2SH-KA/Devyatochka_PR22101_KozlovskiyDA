@@ -30,5 +30,6 @@ namespace Devyatochka.Database
         public long DirectorPassport { get; set; }
     
         public virtual ICollection<Product> Product { get; set; }
+        public virtual Country Country { get; set; }
     }
 }

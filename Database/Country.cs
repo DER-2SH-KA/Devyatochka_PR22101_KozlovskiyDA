@@ -17,11 +17,13 @@ namespace Devyatochka.Database
         public Country()
         {
             this.Product = new HashSet<Product>();
+            this.Brand = new HashSet<Brand>();
         }
     
         public int Id { get; set; }
         public string Title { get; set; }
     
         public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Brand> Brand { get; set; }
     }
 }

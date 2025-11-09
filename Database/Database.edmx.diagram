@@ -22,6 +22,7 @@
         <AssociationConnector Association="DevyatochkaModel.FK_Product_WeightType" ManuallyRouted="false" />
         <AssociationConnector Association="DevyatochkaModel.FK_ProductCost_Product" ManuallyRouted="false" />
         <AssociationConnector Association="DevyatochkaModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="DevyatochkaModel.FK_Brand_Country" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
