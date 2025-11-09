@@ -27,7 +27,7 @@
 
         <Button x:Name="buttonUserList" Content="Пользователи" Grid.Row="1" Grid.Column="1" Margin="5" Click="buttonUserList_Click"/>
         <Button x:Name="buttonRoleList" Content="Роли" Grid.Row="1" Grid.Column="2" Margin="5" Click="buttonRoleList_Click"/>
-        <Button x:Name="buttonCountryList" Content="Страны" Grid.Row="2" Grid.Column="1" Margin="5"/>
+        <Button x:Name="buttonCountryList" Content="Страны" Grid.Row="2" Grid.Column="1" Margin="5" Click="buttonCountryList_Click"/>
         <Button x:Name="buttonProductCategoryList" Content="Категории" Grid.Row="2" Grid.Column="2" Margin="5"/>
         <Button x:Name="buttonBrandList" Content="Бренды" Grid.Row="3" Grid.Column="1" Margin="5"/>
         <Button x:Name="buttonWeightTypeList" Content="Меры веса" Grid.Row="3" Grid.Column="2" Margin="5"/>

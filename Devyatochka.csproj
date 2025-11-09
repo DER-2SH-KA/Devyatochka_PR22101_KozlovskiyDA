@@ -119,6 +119,9 @@
     <Compile Include="Pages\Admin\CountryList.xaml.cs">
       <DependentUpon>CountryList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateCountryPage.xaml.cs">
+      <DependentUpon>CreateUpdateCountryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateRolePage.xaml.cs">
       <DependentUpon>CreateUpdateRolePage.xaml</DependentUpon>
     </Compile>
@@ -152,12 +155,16 @@
     <Compile Include="Pages\SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SubComponents\CountryCard.xaml.cs">
+      <DependentUpon>CountryCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SubComponents\RoleCard.xaml.cs">
       <DependentUpon>RoleCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SubComponents\UserCard.xaml.cs">
       <DependentUpon>UserCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\CountryService.cs" />
     <Compile Include="Services\RoleService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Util\Db\SqlHelper.cs" />
@@ -182,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Admin\CountryList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateCountryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +241,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SignUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SubComponents\CountryCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
