@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="200">
     <StackPanel Margin="10 10 10 10" MinHeight="130" Height="130" MaxHeight="200">
-        <TextBlock x:Name="textBlockLogin" Text="{Binding Path=Login}" FontSize="18" TextAlignment="Center"  />
-        <TextBlock x:Name="textBlockRole" Text="{Binding Path=Role.Title}" FontSize="18" TextAlignment="Center" />
+        <TextBlock x:Name="textBlockLogin" Text="{Binding Path=Login, StringFormat=Логин: {0}}" FontSize="18" TextAlignment="Center"  />
+        <TextBlock x:Name="textBlockRole" Text="{Binding Path=Role.Title, StringFormat=Роль: {0}}" FontSize="18" TextAlignment="Center" />
         <Button x:Name="buttonEdit" Content="Изменить" Width="150" Height="30" Margin="5" Click="buttonEdit_Click" />
         <Button x:Name="buttonDelete" Content="Удалить" Width="150" Height="30" Margin="5 0 5 5" Click="buttonDelete_Click"  />
     </StackPanel>
