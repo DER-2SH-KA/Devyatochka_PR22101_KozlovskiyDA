@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Devyatochka.Database;
+using Devyatochka.Model;
+using Devyatochka.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,37 @@ namespace Devyatochka.Pages.SubComponents
     /// </summary>
     public partial class ProductCostCard : UserControl
     {
-        public ProductCostCard()
+        private ProductCostService service;
+
+        private ProductCost entityForCard;
+        private ProductCostModel model;
+
+        public ProductCostCard(ProductCost entity, bool isAdmin)
         {
             InitializeComponent();
+
+            this.entityForCard = entity;
+            this.service = ProductCostService.GetInstance();
+            this.model = new ProductCostModel(entityForCard);
+
+            this.DataContext = model;
+
+            buttonEdit.Visibility = isAdmin ? Visibility.Visible : Visibility.Collapsed;
+            buttonDelete.Visibility = isAdmin ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void buttonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new Admin.CreateUpdatePages.CreateUpdateProductCostPage(entityForCard));
+        }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите удалить \"{entityForCard.Product.Title}\"?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                service.Delete(entityForCard);
+                MessageBox.Show("Сущность удалена. Обновите список.");
+            }
         }
     }
 }

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Devyatochka.Database;
+using Devyatochka.Services;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,52 @@ namespace Devyatochka.Pages.Admin
     /// </summary>
     public partial class ProductCostList : Page
     {
-        public ProductCostList()
+        private ProductCostService service;
+        private ObservableCollection<ProductCost> entities;
+        private bool isAdminPrivate = false;
+
+        public ProductCostList(bool isAdmin)
         {
             InitializeComponent();
+            service = ProductCostService.GetInstance();
+
+            this.isAdminPrivate = isAdmin;
+
+            LoadEntities();
+            RefreshWrapPanelContent();
+
+            buttonCreate.Visibility = isAdminPrivate ? Visibility.Visible : Visibility.Hidden;
+        }
+
+        private void LoadEntities()
+        {
+            entities = service.GetAll();
+        }
+
+        private void RefreshWrapPanelContent()
+        {
+            wrapPanelContainer.Children.Clear();
+
+            var filteredEntities = entities.Where(r =>
+                string.IsNullOrWhiteSpace(textBoxTitle.Text) ||
+                r.Product.Title.ToLower().Contains(textBoxTitle.Text.Trim().ToLower())
+            );
+
+            foreach (var entity in filteredEntities)
+            {
+                wrapPanelContainer.Children.Add(new SubComponents.ProductCostCard(entity, isAdminPrivate));
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            LoadEntities();
+            RefreshWrapPanelContent();
+        }
+
+        private void buttonCreate_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CreateUpdatePages.CreateUpdateProductCostPage());
         }
     }
 }

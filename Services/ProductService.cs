@@ -58,7 +58,7 @@ namespace Devyatochka.Services
 
                 if (title.Equals("")) { return null; }
 
-                Country entityToCreate = new Country();
+                Product entityToCreate = new Product();
 
                 entityToCreate.Title = title;
 

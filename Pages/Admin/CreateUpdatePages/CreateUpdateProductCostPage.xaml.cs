@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Devyatochka.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,11 @@ namespace Devyatochka.Pages.Admin.CreateUpdatePages
     public partial class CreateUpdateProductCostPage : Page
     {
         public CreateUpdateProductCostPage()
+        {
+            InitializeComponent();
+        }
+
+        public CreateUpdateProductCostPage(ProductCost entity)
         {
             InitializeComponent();
         }

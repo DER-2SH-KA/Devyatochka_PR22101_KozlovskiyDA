@@ -29,5 +29,10 @@ namespace Devyatochka.Pages
         {
             this.NavigationService.Navigate(new Pages.AuthPage());
         }
+
+        private void btnIAmClient_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Admin.ProductCostList(false));
+        }
     }
 }

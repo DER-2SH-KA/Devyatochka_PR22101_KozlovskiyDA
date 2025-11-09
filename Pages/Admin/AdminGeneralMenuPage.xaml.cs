@@ -67,7 +67,7 @@ namespace Devyatochka.Pages
 
         private void buttonProductCostList_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pages.Admin.ProductCostList());
+            this.NavigationService.Navigate(new Pages.Admin.ProductCostList(true));
         }
     }
 }
