@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Devyatochka.Database;
+using Devyatochka.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,61 @@ namespace Devyatochka.Pages.Admin.CreateUpdatePages
     /// </summary>
     public partial class CreateUpdateWeightTypePage : Page
     {
+        private WeightType entityToEditing;
+        private WeightTypeService service;
+
         public CreateUpdateWeightTypePage()
         {
             InitializeComponent();
+            service = WeightTypeService.GetInstance();
+        }
+
+        public CreateUpdateWeightTypePage(WeightType entity)
+        {
+            InitializeComponent();
+            service = WeightTypeService.GetInstance();
+
+            this.entityToEditing = entity;
+            FillFields();
+        }
+
+        private void FillFields()
+        {
+            if (entityToEditing != null)
+            {
+                textBoxTitle.Text = entityToEditing.Title;
+            }
+        }
+
+        private void buttonSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxTitle.Text))
+            {
+                MessageBox.Show("Название не может быть пустым.");
+                return;
+            }
+
+            if (this.entityToEditing != null)
+            {
+                entityToEditing.Title = textBoxTitle.Text.Trim();
+                var updatedEntity = service.Update(entityToEditing);
+                if (updatedEntity != null)
+                {
+                    MessageBox.Show("Сущность обновлена!");
+                    NavigationService.GoBack();
+                }
+                else { MessageBox.Show("Сущность не была обновлена!"); }
+            }
+            else
+            {
+                var createdEntity = service.Create(textBoxTitle.Text.Trim());
+                if (createdEntity != null)
+                {
+                    MessageBox.Show("Сущность создана!");
+                    NavigationService.GoBack();
+                }
+                else { MessageBox.Show("Сущность не была создана!"); }
+            }
         }
     }
 }

@@ -26,29 +26,29 @@ namespace Devyatochka.Services
 
         private ProductCategoryService() { }
 
-        public ObservableCollection<DiscountType> GetAll()
+        public ObservableCollection<ProductCategory> GetAll()
         {
             try
             {
-                return SqlHelper.GetDiscountTypes();
+                return SqlHelper.GetProductCategories();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            return new ObservableCollection<DiscountType>();
+            return new ObservableCollection<ProductCategory>();
         }
 
-        public DiscountType GetById(long id)
+        public ProductCategory GetById(long id)
         {
             try
             {
-                return SqlHelper.GetDiscountTypeById(id);
+                return SqlHelper.GetProductCategoryById(id);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             return null;
         }
 
-        public DiscountType Create(string titleRaw)
+        public ProductCategory Create(string titleRaw)
         {
             try
             {
@@ -58,18 +58,18 @@ namespace Devyatochka.Services
 
                 if (title.Equals("")) { return null; }
 
-                DiscountType entityToCreate = new DiscountType();
+                ProductCategory entityToCreate = new ProductCategory();
 
                 entityToCreate.Title = title;
 
-                return SqlHelper.CreateDiscountType(entityToCreate);
+                return SqlHelper.CreateProductCategory(entityToCreate);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             return null;
         }
 
-        public DiscountType Update(DiscountType entity)
+        public ProductCategory Update(ProductCategory entity)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace Devyatochka.Services
                     return null;
                 }
 
-                return SqlHelper.UpdateDiscountType(entity);
+                return SqlHelper.UpdateProductCategory(entity);
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace Devyatochka.Services
             return null;
         }
 
-        public void Delete(DiscountType entity)
+        public void Delete(ProductCategory entity)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace Devyatochka.Services
                     MessageBox.Show("Сущность для удаления равна нулю");
                 }
 
-                SqlHelper.DeleteDiscountType(entity);
+                SqlHelper.DeleteProductCategory(entity);
                 MessageBox.Show("Сущность удалена");
             }
             catch (Exception ex)

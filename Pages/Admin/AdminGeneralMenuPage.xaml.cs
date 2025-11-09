@@ -39,5 +39,35 @@ namespace Devyatochka.Pages
         {
             this.NavigationService.Navigate(new Pages.Admin.CountryList());
         }
+
+        private void buttonProductCategoryList_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Admin.ProductCategoryList());
+        }
+
+        private void buttonBrandList_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Admin.BrandList());
+        }
+
+        private void buttonWeightTypeList_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Admin.WeightTypeList());
+        }
+
+        private void buttonDiscountTypeList_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Admin.DiscountTypeList());
+        }
+
+        private void buttonProductList_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Admin.ProductList());
+        }
+
+        private void buttonProductCostList_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Admin.ProductCostList());
+        }
     }
 }

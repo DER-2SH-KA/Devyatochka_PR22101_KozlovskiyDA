@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Devyatochka.Database;
+using Devyatochka.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,30 @@ namespace Devyatochka.Pages.SubComponents
     /// </summary>
     public partial class WeightTypeCard : UserControl
     {
-        public WeightTypeCard()
+        private WeightTypeService service;
+        private WeightType entityForCard;
+
+        public WeightTypeCard(WeightType entity)
         {
             InitializeComponent();
+
+            this.entityForCard = entity;
+            this.service = WeightTypeService.GetInstance();
+            this.DataContext = entityForCard;
+        }
+
+        private void buttonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new Admin.CreateUpdatePages.CreateUpdateWeightTypePage(entityForCard));
+        }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите удалить \"{entityForCard.Title}\"?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                service.Delete(entityForCard);
+                MessageBox.Show("Сущность удалена. Обновите список.");
+            }
         }
     }
 }

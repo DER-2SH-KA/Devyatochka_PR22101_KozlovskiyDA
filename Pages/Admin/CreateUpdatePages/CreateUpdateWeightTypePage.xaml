@@ -9,6 +9,21 @@
       Title="CreateUpdateWeightTypePage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1" MinWidth="250">
+            <Label Content="Мера веса" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="Название:" Margin="0,0,0,5"/>
+            <TextBox x:Name="textBoxTitle" Margin="0,0,0,20"/>
+            <Button x:Name="buttonSave" Content="Сохранить" Margin="0,5,0,20" Click="buttonSave_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

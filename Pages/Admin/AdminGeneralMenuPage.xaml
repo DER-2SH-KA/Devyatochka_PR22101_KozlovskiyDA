@@ -28,12 +28,12 @@
         <Button x:Name="buttonUserList" Content="Пользователи" Grid.Row="1" Grid.Column="1" Margin="5" Click="buttonUserList_Click"/>
         <Button x:Name="buttonRoleList" Content="Роли" Grid.Row="1" Grid.Column="2" Margin="5" Click="buttonRoleList_Click"/>
         <Button x:Name="buttonCountryList" Content="Страны" Grid.Row="2" Grid.Column="1" Margin="5" Click="buttonCountryList_Click"/>
-        <Button x:Name="buttonProductCategoryList" Content="Категории" Grid.Row="2" Grid.Column="2" Margin="5"/>
-        <Button x:Name="buttonBrandList" Content="Бренды" Grid.Row="3" Grid.Column="1" Margin="5"/>
-        <Button x:Name="buttonWeightTypeList" Content="Меры веса" Grid.Row="3" Grid.Column="2" Margin="5"/>
-        <Button x:Name="buttonProductList" Content="Продукты" Grid.Row="4" Grid.Column="1" Margin="5"/>
-        <Button x:Name="buttonDiscountTypeList" Content="Типы Скидки" Grid.Row="4" Grid.Column="2" Margin="5"/>
+        <Button x:Name="buttonProductCategoryList" Content="Категории" Grid.Row="2" Grid.Column="2" Margin="5" Click="buttonProductCategoryList_Click"/>
+        <Button x:Name="buttonBrandList" Content="Бренды" Grid.Row="3" Grid.Column="1" Margin="5" Click="buttonBrandList_Click"/>
+        <Button x:Name="buttonWeightTypeList" Content="Меры веса" Grid.Row="3" Grid.Column="2" Margin="5" Click="buttonWeightTypeList_Click"/>
+        <Button x:Name="buttonProductList" Content="Продукты" Grid.Row="4" Grid.Column="1" Margin="5" Click="buttonProductList_Click"/>
+        <Button x:Name="buttonDiscountTypeList" Content="Типы Скидки" Grid.Row="4" Grid.Column="2" Margin="5" Click="buttonDiscountTypeList_Click"/>
 
-        <Button x:Name="buttonProductCostList" Content="Цены" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5"/>
+        <Button x:Name="buttonProductCostList" Content="Цены" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" Click="buttonProductCostList_Click"/>
     </Grid>
 </Page>

@@ -6,7 +6,11 @@
              xmlns:local="clr-namespace:Devyatochka.Pages.SubComponents"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Margin="5" Padding="5" MinWidth="180">
+        <StackPanel>
+            <TextBlock Text="{Binding Path=Title}" FontSize="16" TextAlignment="Center" TextWrapping="Wrap" MinHeight="40"/>
+            <Button x:Name="buttonEdit" Content="Изменить" Margin="5,10,5,5" Click="buttonEdit_Click" />
+            <Button x:Name="buttonDelete" Content="Удалить" Margin="5,0,5,5" Click="buttonDelete_Click"  />
+        </StackPanel>
+    </Border>
 </UserControl>
