@@ -25,7 +25,7 @@ namespace Devyatochka.Database
         public string Compound { get; set; }
         public float Weight { get; set; }
         public int WeightTypeId { get; set; }
-        public Nullable<System.DateTime> ExpirationDate { get; set; }
+        public string ExpirationDate { get; set; }
         public string ConditionsOfContain { get; set; }
         public long BrandId { get; set; }
         public int ProductCategoryId { get; set; }

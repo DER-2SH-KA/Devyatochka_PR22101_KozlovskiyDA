@@ -43,7 +43,7 @@
           <Property Name="Compound" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Weight" Type="real" Nullable="false" />
           <Property Name="WeightTypeId" Type="int" Nullable="false" />
-          <Property Name="ExpirationDate" Type="date" />
+          <Property Name="ExpirationDate" Type="varchar" MaxLength="20" />
           <Property Name="ConditionsOfContain" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="BrandId" Type="bigint" Nullable="false" />
           <Property Name="ProductCategoryId" Type="int" Nullable="false" />
@@ -317,7 +317,7 @@
           <Property Name="Compound" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Weight" Type="Single" Nullable="false" />
           <Property Name="WeightTypeId" Type="Int32" Nullable="false" />
-          <Property Name="ExpirationDate" Type="DateTime" Precision="0" />
+          <Property Name="ExpirationDate" Type="String" />
           <Property Name="ConditionsOfContain" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BrandId" Type="Int64" Nullable="false" />
           <Property Name="ProductCategoryId" Type="Int32" Nullable="false" />
