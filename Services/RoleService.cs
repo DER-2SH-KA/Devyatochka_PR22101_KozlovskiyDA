@@ -47,5 +47,64 @@ namespace Devyatochka.Services
 
             return null;
         }
+
+        public Role Create(string titleRaw)
+        {
+            try
+            {
+                if (titleRaw == null) { return null; }
+
+                string title = titleRaw.Trim();
+
+                if (title.Equals("")) { return null; }
+
+                Role entityToCreate = new Role();
+
+                entityToCreate.Title = title;
+
+                return SqlHelper.CreateRole(entityToCreate);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            return null;
+        }
+
+        public Role Update(Role entity)
+        {
+            try
+            {
+                if (entity == null)
+                {
+                    MessageBox.Show("Сущность для обновления равна нулю");
+                    return null;
+                }
+
+                return SqlHelper.UpdateRole(entity);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return null;
+        }
+
+        public void Delete(Role entity)
+        {
+            try
+            {
+                if (entity == null)
+                {
+                    MessageBox.Show("Сущность для удаления равна нулю");
+                }
+
+                SqlHelper.DeleteRole(entity);
+                MessageBox.Show("Сущность удалена");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

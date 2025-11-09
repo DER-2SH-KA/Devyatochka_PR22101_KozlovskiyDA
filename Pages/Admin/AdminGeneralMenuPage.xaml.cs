@@ -29,5 +29,10 @@ namespace Devyatochka.Pages
         {
             this.NavigationService.Navigate(new Pages.Admin.UserList());
         }
+
+        private void buttonRoleList_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Admin.RoleList());
+        }
     }
 }

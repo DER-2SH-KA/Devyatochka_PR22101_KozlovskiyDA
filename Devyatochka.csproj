@@ -119,6 +119,9 @@
     <Compile Include="Pages\Admin\CountryList.xaml.cs">
       <DependentUpon>CountryList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateRolePage.xaml.cs">
+      <DependentUpon>CreateUpdateRolePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\CreateUpdatePages\CreateUpdateUserPage.xaml.cs">
       <DependentUpon>CreateUpdateUserPage.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,9 @@
     <Compile Include="Pages\SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SubComponents\RoleCard.xaml.cs">
+      <DependentUpon>RoleCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SubComponents\UserCard.xaml.cs">
       <DependentUpon>UserCard.xaml</DependentUpon>
     </Compile>
@@ -176,6 +182,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Admin\CountryList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\CreateUpdatePages\CreateUpdateRolePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SignUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SubComponents\RoleCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
