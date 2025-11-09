@@ -173,17 +173,32 @@
     <Compile Include="Pages\SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SubComponents\BrandCard.xaml.cs">
+      <DependentUpon>BrandCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SubComponents\CountryCard.xaml.cs">
       <DependentUpon>CountryCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SubComponents\DiscountTypeCard.xaml.cs">
+      <DependentUpon>DiscountTypeCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SubComponents\ProductCard.xaml.cs">
+      <DependentUpon>ProductCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SubComponents\ProductCategoryCard.xaml.cs">
       <DependentUpon>ProductCategoryCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SubComponents\ProductCostCard.xaml.cs">
+      <DependentUpon>ProductCostCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SubComponents\RoleCard.xaml.cs">
       <DependentUpon>RoleCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SubComponents\UserCard.xaml.cs">
       <DependentUpon>UserCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SubComponents\WeightTypeCard.xaml.cs">
+      <DependentUpon>WeightTypeCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\BrandService.cs" />
     <Compile Include="Services\CountryService.cs" />
@@ -295,11 +310,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SubComponents\BrandCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SubComponents\CountryCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SubComponents\DiscountTypeCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SubComponents\ProductCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SubComponents\ProductCategoryCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SubComponents\ProductCostCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -308,6 +339,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SubComponents\UserCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SubComponents\WeightTypeCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
