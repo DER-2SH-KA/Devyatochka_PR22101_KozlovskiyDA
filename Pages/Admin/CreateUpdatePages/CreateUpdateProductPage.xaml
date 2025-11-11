@@ -9,6 +9,74 @@
       Title="CreateUpdateProductPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1" MinWidth="250">
+            <Label Content="Продукт" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Название:" Width="200" Margin="0,0,0,5"/>
+            <TextBox x:Name="textBoxTitle" MaxLines="1" Width="200" Margin="0,0,0,5"/>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="0, 0, 5, 0">
+                    <TextBlock Text="Описание:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="textBoxDescription" Width="200" Height="60" Margin="0,0,0,5"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Состав:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="textBoxCompound" Width="200" Height="60" Margin="0,0,0,5"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="5, 0, 0, 0">
+                    <TextBlock Text="Условия хранения:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="textBoxConditionsOfContain" Width="200" Height="60" Margin="0,0,0,5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="0, 0, 5, 0">
+                    <TextBlock Text="Вес:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="textBoxWeight" MaxLines="1" Width="200" Margin="0,0,0,5"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Мера веса:" Margin="0 0 0 5"/>
+                    <ComboBox x:Name="comboBoxWeightType" Width="200" Margin="0 0 0 5" DisplayMemberPath="Title" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="5, 0, 0, 0">
+                    <TextBlock Text="Срок годности:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="textBoxExpirationDate" Width="200" MaxLines="1" Margin="0,0,0,5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="0,0,5,0">
+                    <TextBlock Text="Бренд:" Margin="0 0 0 5"/>
+                    <ComboBox x:Name="comboBoxBrand" Width="200" Margin="0,0,0,5" DisplayMemberPath="Title" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Категория:" Margin="0 0 0 5"/>
+                    <ComboBox x:Name="comboBoxProductCategory" Width="200" Margin="0 0 0 5" DisplayMemberPath="Title" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="5, 0, 0, 0">
+                    <TextBlock Text="Страна производства:" Margin="0 0 0 5"/>
+                    <ComboBox x:Name="comboBoxCountryOfOrigin" Width="200" Margin="0 0 0 5" DisplayMemberPath="Title" />
+                </StackPanel>
+            </StackPanel>
+
+            <Button x:Name="buttonSave" Content="Сохранить" Margin="0,5,0,20" Click="buttonSave_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
