@@ -48,22 +48,40 @@ namespace Devyatochka.Services
             return null;
         }
 
-        public ProductCost Create(string titleRaw)
+        public ProductCost Create(
+            Product product,
+            string defaultCostRaw,
+            string discountRaw,
+            DiscountType discountType
+        )
         {
             try
             {
-                if (titleRaw == null) { return null; }
+                if (
+                    product == null ||
+                    string.IsNullOrWhiteSpace(defaultCostRaw)
+                ) { return null; }
 
-                string title = titleRaw.Trim();
-
-                if (title.Equals("")) { return null; }
+                float defaultCost = float.Parse(defaultCostRaw.Trim());
+                Int16 discount = string.IsNullOrWhiteSpace(discountRaw) ? 
+                    (short) -1 : Int16.Parse(discountRaw.Trim());
 
                 ProductCost entityToCreate = new ProductCost();
 
-                // entityToCreate.Title = title;
+                entityToCreate.Product = product;
+                entityToCreate.DefaultCost = defaultCost;
 
-                // return SqlHelper.CreateProduct(entityToCreate);
-                return null;
+                if (discount == -1) {
+                    entityToCreate.Discount = null;
+                    entityToCreate.DiscountType = null;
+                }
+                else
+                {
+                    entityToCreate.Discount = discount;
+                    entityToCreate.DiscountType = discountType;
+                }
+
+                return SqlHelper.CreateProductCost(entityToCreate);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -80,8 +98,7 @@ namespace Devyatochka.Services
                     return null;
                 }
 
-                // return SqlHelper.UpdateCountry(entity);
-                return null;
+                return SqlHelper.UpdateProductCost(entity);
             }
             catch (Exception ex)
             {
