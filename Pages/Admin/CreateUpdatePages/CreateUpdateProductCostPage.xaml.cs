@@ -170,7 +170,7 @@ namespace Devyatochka.Pages.Admin.CreateUpdatePages
             }
             else
             {
-                if (productCosts.Where(x => x.Product == (Product)comboBoxProduct.SelectedItem).First() != null) {
+                if (productCosts.Where(x => x.Product == (Product)comboBoxProduct.SelectedItem).ToList().Count > 0) {
                     MessageBox.Show("Цена на этот товар уже указана!");
                     return;
                 }
