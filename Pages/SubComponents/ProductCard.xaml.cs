@@ -32,6 +32,25 @@ namespace Devyatochka.Pages.SubComponents
             this.entityForCard = entity;
             this.service = ProductService.GetInstance();
             this.DataContext = entityForCard;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(entity.ImageUri))
+                {
+                    imageProductPhoto.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    imageProductPhoto.Visibility = Visibility.Visible;
+                    imageProductPhoto.Source = new BitmapImage(
+                        new Uri(entity.ImageUri, UriKind.Absolute)
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось загрузить карточку товара: " + entity.Title);
+            }
         }
 
         private void buttonEdit_Click(object sender, RoutedEventArgs e)
