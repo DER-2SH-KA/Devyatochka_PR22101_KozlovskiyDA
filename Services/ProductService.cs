@@ -48,22 +48,62 @@ namespace Devyatochka.Services
             return null;
         }
 
-        public Product Create(string titleRaw)
+        public Product Create(
+            string titleRaw,
+            string descriptionRaw,
+            string compoundRaw,
+            string weightRaw,
+            WeightType weightType,
+            string expirationDateRaw,
+            string conditionsOfContainRaw,
+            Brand brand,
+            ProductCategory productCategory,
+            Country countryOfOrigin
+        )
         {
             try
             {
-                if (titleRaw == null) { return null; }
+                if (
+                string.IsNullOrWhiteSpace(titleRaw) ||
+                string.IsNullOrWhiteSpace(compoundRaw) ||
+                string.IsNullOrWhiteSpace(conditionsOfContainRaw) ||
+                string.IsNullOrWhiteSpace(weightRaw) ||
+                weightType == null ||
+                brand == null ||
+                productCategory == null ||
+                countryOfOrigin == null
+                ) { return null; }
 
                 string title = titleRaw.Trim();
+                string description = descriptionRaw.Trim().Equals("") ? 
+                    null : descriptionRaw.Trim();
+                string compound = compoundRaw.Trim();
+                float weight = float.Parse(weightRaw.Trim());
+                string expirationDate = expirationDateRaw.Trim().Equals("") ?
+                    null : expirationDateRaw.Trim();
+                string conditionsOfContain = conditionsOfContainRaw.Trim();
 
-                if (title.Equals("")) { return null; }
+                if (
+                string.IsNullOrWhiteSpace(titleRaw) ||
+                string.IsNullOrWhiteSpace(compoundRaw) ||
+                string.IsNullOrWhiteSpace(conditionsOfContainRaw) ||
+                string.IsNullOrWhiteSpace(weightRaw)
+                ) { return null; }
 
                 Product entityToCreate = new Product();
 
                 entityToCreate.Title = title;
+                entityToCreate.Description = description;
+                entityToCreate.Compound = compound;
+                entityToCreate.Weight = weight;
+                entityToCreate.WeightType = weightType;
+                entityToCreate.ExpirationDate = expirationDate;
+                entityToCreate.ConditionsOfContain = conditionsOfContain;
+                entityToCreate.Brand = brand;
+                entityToCreate.ProductCategory = productCategory;
+                entityToCreate.Country = countryOfOrigin;
 
-                // return SqlHelper.CreateProduct(entityToCreate);
-                return null;
+                return SqlHelper.CreateProduct(entityToCreate);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -80,8 +120,7 @@ namespace Devyatochka.Services
                     return null;
                 }
 
-                // return SqlHelper.UpdateCountry(entity);
-                return null;
+                return SqlHelper.UpdateProduct(entity);
             }
             catch (Exception ex)
             {

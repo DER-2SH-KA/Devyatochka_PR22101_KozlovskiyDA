@@ -26,6 +26,7 @@ namespace Devyatochka.Pages.Admin.CreateUpdatePages
         private Brand entityToEditing;
 
         private BrandService service;
+
         private CountryService countryService;
 
         private ObservableCollection<Country> countries;
