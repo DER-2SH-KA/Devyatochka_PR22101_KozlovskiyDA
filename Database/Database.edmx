@@ -48,6 +48,7 @@
           <Property Name="BrandId" Type="bigint" Nullable="false" />
           <Property Name="ProductCategoryId" Type="int" Nullable="false" />
           <Property Name="CountryOfOriginId" Type="int" Nullable="false" />
+          <Property Name="ImageUri" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="ProductCategory">
           <Key>
@@ -317,7 +318,7 @@
           <Property Name="Compound" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Weight" Type="Single" Nullable="false" />
           <Property Name="WeightTypeId" Type="Int32" Nullable="false" />
-          <Property Name="ExpirationDate" Type="String" />
+          <Property Name="ExpirationDate" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="ConditionsOfContain" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BrandId" Type="Int64" Nullable="false" />
           <Property Name="ProductCategoryId" Type="Int32" Nullable="false" />
@@ -327,6 +328,7 @@
           <NavigationProperty Name="ProductCategory" Relationship="Self.FK_Product_ProductCategory" FromRole="Product" ToRole="ProductCategory" />
           <NavigationProperty Name="WeightType" Relationship="Self.FK_Product_WeightType" FromRole="Product" ToRole="WeightType" />
           <NavigationProperty Name="ProductCost" Relationship="Self.FK_ProductCost_Product" FromRole="Product" ToRole="ProductCost" />
+          <Property Name="ImageUri" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ProductCategory">
           <Key>
@@ -605,6 +607,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="DevyatochkaModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ImageUri" ColumnName="ImageUri" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
