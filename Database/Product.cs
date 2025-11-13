@@ -30,6 +30,7 @@ namespace Devyatochka.Database
         public long BrandId { get; set; }
         public int ProductCategoryId { get; set; }
         public int CountryOfOriginId { get; set; }
+        public string ImageUri { get; set; }
     
         public virtual Brand Brand { get; set; }
         public virtual Country Country { get; set; }

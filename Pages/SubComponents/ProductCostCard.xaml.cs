@@ -38,6 +38,36 @@ namespace Devyatochka.Pages.SubComponents
 
             this.DataContext = model;
 
+            try
+            {
+                if (string.IsNullOrWhiteSpace(entity.Product.ImageUri))
+                {
+                    imageProductPhoto.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    imageProductPhoto.Visibility = Visibility.Visible;
+                    imageProductPhoto.Source = new BitmapImage(
+                        new Uri(model.Product.ImageUri, UriKind.Absolute)
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось загрузить карточку товара: " + model.Product.Title);
+            }
+
+            if (entity.Discount == null)
+            {
+                textBlockDiscount.Visibility = Visibility.Collapsed;
+                textBlockDiscountType.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                textBlockDiscount.Visibility = Visibility.Visible;
+                textBlockDiscountType.Visibility= Visibility.Visible;
+            }
+
             buttonEdit.Visibility = isAdmin ? Visibility.Visible : Visibility.Collapsed;
             buttonDelete.Visibility = isAdmin ? Visibility.Visible : Visibility.Collapsed;
         }

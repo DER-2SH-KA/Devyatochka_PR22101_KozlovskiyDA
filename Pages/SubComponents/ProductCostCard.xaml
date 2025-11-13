@@ -12,8 +12,8 @@
             <TextBlock Text="{Binding Path=Product.Title}" FontWeight="Bold" FontSize="16" TextAlignment="Center" TextWrapping="Wrap" MinHeight="40"/>
             <TextBlock Text="{Binding Path=Product.Brand.Title}" FontStyle="Italic" FontSize="14" TextAlignment="Center" />
             <TextBlock Text="{Binding Path=FinalCost, StringFormat={}{0:N2} рублей}" FontStyle="Italic" FontSize="14" TextAlignment="Center" />
-            <TextBlock Text="{Binding Path=Discount, StringFormat=Скидка: {0}%}" FontStyle="Italic" FontSize="14" TextAlignment="Center" />
-            <TextBlock Text="{Binding Path=DiscountType.Title, StringFormat=Тип скидки: {0}}" FontStyle="Italic" FontSize="14" TextAlignment="Center" />
+            <TextBlock x:Name="textBlockDiscount" Text="{Binding Path=Discount, StringFormat=Скидка: {0}%}" FontStyle="Italic" FontSize="14" TextAlignment="Center" />
+            <TextBlock x:Name="textBlockDiscountType" Text="{Binding Path=DiscountType.Title, StringFormat=Тип скидки: {0}}" FontStyle="Italic" FontSize="14" TextAlignment="Center" />
             <Button x:Name="buttonEdit" Content="Изменить" Margin="5,10,5,5" Click="buttonEdit_Click" />
             <Button x:Name="buttonDelete" Content="Удалить" Margin="5,0,5,5" Click="buttonDelete_Click"  />
         </StackPanel>
