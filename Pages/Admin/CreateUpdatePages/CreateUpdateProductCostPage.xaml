@@ -9,6 +9,33 @@
       Title="CreateUpdateProductCostPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" MinWidth="250">
+            <Label Content="Цена" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Продукт:" Margin="0 0 0 5"/>
+            <ComboBox x:Name="comboBoxProduct" Margin="0 0 0 5" DisplayMemberPath="Title" />
+
+            <TextBlock Text="Цена по умолчанию:" Margin="0,0,0,5"/>
+            <TextBox x:Name="textBoxDefaultCost" MaxLines="1" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Размер скидки (либо пустая строка):" Margin="0,0,0,5"/>
+            <TextBox x:Name="textBoxDicsount" MaxLines="1" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Тип скидки (не менять, если скидки нет):" Margin="0 0 0 5"/>
+            <ComboBox x:Name="comboBoxDiscountType" Margin="0 0 0 5" DisplayMemberPath="Title" />
+
+            <Button x:Name="buttonSave" Content="Сохранить" Margin="0,5,0,20" Click="buttonSave_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

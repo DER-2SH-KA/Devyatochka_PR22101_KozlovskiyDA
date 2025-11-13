@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Devyatochka.Model
 {
@@ -18,13 +19,16 @@ namespace Devyatochka.Model
 
         public double GetFinalCost()
         {
-            if (Discount == null)
+            if (Discount == null || Discount == (short) 0)
             {
                 return DefaultCost;
             }
             else
             {
-                return Math.Round((double) (DefaultCost * (1.0 - (Discount.Value / 100))), 2);
+                double disc =
+                    ((double)DefaultCost * ((double) ((short) 100 - Discount.Value) / 100));
+
+                return disc;
             }
         }
 
